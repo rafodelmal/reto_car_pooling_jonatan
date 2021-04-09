@@ -12,6 +12,11 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { LoginComponent } from './login/login.component';
+import { CreateCarpoolComponent } from './register/create-carpool/create-carpool.component';
+import { CreateUserComponent } from './register/create-user/create-user.component';
+import { EditComponent } from './user/edit/edit.component';
 
 @NgModule({
   imports: [
@@ -26,7 +31,12 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    CalculadoraComponent,
+    LoginComponent,
+    CreateCarpoolComponent,
+    CreateUserComponent,
+    EditComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

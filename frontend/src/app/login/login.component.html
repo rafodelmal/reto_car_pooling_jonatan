@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <body>
+      <form class="box" action="index.html" method="post">
+        <h1>Carpool  <i class="pe-7s-car"></i></h1>
+        <h5>Login</h5>
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <input
+          type="submit"
+          name="loginCarpool"
+          value="Login user"
+          (click)="checkLoginCarpool()"
+        />
+        <input
+          type="submit"
+          name="loginUser"
+          value="Login carpool"
+          (click)="checkLoginUser()"
+        />
+        <div>
+          <button class="btn" (click)="IrRegUsuario()">  Registrar usuario </button>
+          <br />
+          <br />
+          <button class="btn" (click)="IrRegCarpool()">   Registrar carpool </button>
+        </div>
+      </form>
+    </body>
+  </div>
+   
+   
+  
+  

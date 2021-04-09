@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import * as Chartist from 'chartist';
-
+ 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,20 +12,20 @@ export class HomeComponent implements OnInit {
     public emailChartType: ChartType;
     public emailChartData: any;
     public emailChartLegendItems: LegendItem[];
-
+ 
     public hoursChartType: ChartType;
     public hoursChartData: any;
     public hoursChartOptions: any;
     public hoursChartResponsive: any[];
     public hoursChartLegendItems: LegendItem[];
-
+ 
     public activityChartType: ChartType;
     public activityChartData: any;
     public activityChartOptions: any;
     public activityChartResponsive: any[];
     public activityChartLegendItems: LegendItem[];
   constructor() { }
-
+ 
   ngOnInit() {
       this.emailChartType = ChartType.Pie;
       this.emailChartData = {
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
         { title: 'Bounce', imageClass: 'fa fa-circle text-danger' },
         { title: 'Unsubscribe', imageClass: 'fa fa-circle text-warning' }
       ];
-
+ 
       this.hoursChartType = ChartType.Line;
       this.hoursChartData = {
         labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
         { title: 'Click', imageClass: 'fa fa-circle text-danger' },
         { title: 'Click Second Time', imageClass: 'fa fa-circle text-warning' }
       ];
-
+ 
       this.activityChartType = ChartType.Bar;
       this.activityChartData = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -105,8 +105,8 @@ export class HomeComponent implements OnInit {
         { title: 'Tesla Model S', imageClass: 'fa fa-circle text-info' },
         { title: 'BMW 5 Series', imageClass: 'fa fa-circle text-danger' }
       ];
-
-
+ 
+ 
     }
-
+ 
 }

@@ -6,7 +6,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { Observable } from 'rxjs';
-
+ 
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',
@@ -16,23 +16,23 @@ export class AdminLayoutComponent implements OnInit {
   private _router: Subscription;
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
-
+ 
   constructor( public location: Location, private router: Router) {}
-
+ 
   ngOnInit() {
     console.log(this.router)
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
-
+ 
       if (isWindows) {
           // if we are on windows OS we activate the perfectScrollbar function
-
+ 
           document.getElementsByTagName('body')[0].classList.add('perfect-scrollbar-on');
       } else {
           document.getElementsByTagName('body')[0].classList.remove('perfect-scrollbar-off');
       }
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
       const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
-
+ 
       this.location.subscribe((ev:PopStateEvent) => {
           this.lastPoppedUrl = ev.url;
       });
@@ -84,5 +84,7 @@ export class AdminLayoutComponent implements OnInit {
       }
       return bool;
   }
-
+ 
 }
+ 
+ 
