@@ -1,0 +1,19 @@
+<div class="container-fluid">
+
+  <body>
+    <form class="box">
+      <h1>Carpool <i class="pe-7s-car"></i></h1>
+      <h5>Login</h5> 
+      <input type="text" name="username" placeholder="Username" [(ngModel)]="username" class="form-control"  />
+      <input type="password" name="password" placeholder="Password" [(ngModel)]="password" />
+      <input type="submit" name="loginCarpool" value="LoginCarpool" (click)="checkLoginCarpool()" />
+      <input type="submit" name="loginUser" value="LoginUser" (click)="checkLoginUser()" />
+      <div>
+        <button class="btn" (click)="IrRegUsuario()"> Registrar usuario </button>
+        <br />
+        <br />
+        <button class="btn" (click)="IrRegCarpool()"> Registrar carpool </button>
+      </div>
+    </form>
+  </body>
+</div>
