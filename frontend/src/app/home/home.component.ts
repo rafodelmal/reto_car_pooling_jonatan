@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import * as Chartist from 'chartist';
+import { CarpoolService } from 'app/shared/services/carpool.service';
+import { User } from 'app/model/User';
  
 @Component({
   selector: 'app-home',
@@ -24,9 +26,30 @@ export class HomeComponent implements OnInit {
     public activityChartOptions: any;
     public activityChartResponsive: any[];
     public activityChartLegendItems: LegendItem[];
-  constructor() { }
+
+    users:User[];
+  constructor(private service:CarpoolService) { }
  
   ngOnInit() {
+
+
+
+      this.service.getUsuario()
+      .subscribe(data=>{
+        console.log(data);
+        this.users=data;
+      })
+    
+
+
+
+
+
+
+
+
+
+
       this.emailChartType = ChartType.Pie;
       this.emailChartData = {
         labels: ['62%', '32%', '6%'],
@@ -105,6 +128,8 @@ export class HomeComponent implements OnInit {
         { title: 'Tesla Model S', imageClass: 'fa fa-circle text-info' },
         { title: 'BMW 5 Series', imageClass: 'fa fa-circle text-danger' }
       ];
+
+      
  
  
     }

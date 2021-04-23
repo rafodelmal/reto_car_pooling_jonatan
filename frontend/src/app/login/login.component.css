@@ -13,7 +13,7 @@ body{
     transform: translate(-50%,-50%);
     background: #191919;
     text-align: center;
-    border: 5px solid #3498db;
+    border: 8px solid #3498db;
   }
   .box h1{
     color: white;

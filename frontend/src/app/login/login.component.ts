@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'app/shared/services/authentication.service';
 import { User } from 'app/model/User';
+import Swal from 'sweetalert2';
  
 @Component({
   selector: 'app-login',
@@ -12,22 +13,13 @@ export class LoginComponent implements OnInit {
  
   username:string;
   password:string;
-  invalidLogin = false;
   respuesta:User;
  
-  //private loginservice: AuthenticationService
+
   constructor(private router: Router,private service:AuthenticationService ) { }
  
   ngOnInit() {
   }
- /* 
- if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate(['/user'])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
-*/
 
   checkLoginUser() {
 
@@ -38,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.service.authenticate(username,password).subscribe(data=>{
       this.respuesta= new User(data);
       this.router.navigate(['/user']);
-      this.invalidLogin = false;
+    
   });
 }
  
@@ -47,12 +39,17 @@ export class LoginComponent implements OnInit {
     let password=this.password;
 
     this.service.authenticate(username,password).subscribe(data=>{
-      this.respuesta= new User(data);
-      if(data=null){
-        alert('el usuario no existe')
+  
+      if(data===null){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Password or username are invalid!'
+        });
       }else{
         this.router.navigate(['/carpool']);
-        this.invalidLogin = false;
+      this.respuesta= new User(data);
+     
       }
         
     });

@@ -5,8 +5,8 @@ export class User {
     password:string;
         constructor(user){
             this.id=user.id;
-            this.id=user.username;
-            this.id=user.password;
+            this.username=user.username;
+            this.password=user.password;
     
         }
     
