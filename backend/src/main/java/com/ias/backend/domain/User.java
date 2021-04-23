@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_app_users")
+@Table(name = "tbl_app_user")
 @Data
 public class User {
     @Id
@@ -13,6 +13,14 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
     public int getId() {
         return id;
     }

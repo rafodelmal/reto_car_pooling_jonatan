@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'app/model/User';
+import { CarpoolService } from 'app/shared/services/carpool.service';
 
 @Component({
   selector: 'app-create-carpool',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCarpoolComponent implements OnInit {
 
-  constructor() { }
+  username:string;
+  password:string;
 
-  ngOnInit(): void {
+
+  constructor(private service:CarpoolService ) { }
+
+  ngOnInit() {
   }
+
+
+
+createCarpool() {
+
+    let username=this.username;
+    let password=this.password;
+
+    let user = new User(password, username)
+
+    this.service.saveCarpool(user).subscribe(data=>{
+      console.log(data);
+
+  },error=>alert(error));
+
+}
+
+
 
 }
