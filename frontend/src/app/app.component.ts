@@ -8,6 +8,7 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 })
 export class AppComponent implements OnInit {
 
+     title = 'filterPipe';
      constructor(public location: Location) {}
 
     ngOnInit(){

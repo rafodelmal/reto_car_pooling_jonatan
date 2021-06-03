@@ -1,18 +1,19 @@
-<div class="main-content" >
+<div class="main-content">
     <div class="container-fluid">
         <div class="row">
-        
+
             <div class="col-md-4">
                 <div class="card card-user">
                     <div class="image">
-                        <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                        <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+                            alt="..." />
                     </div>
                     <div class="content">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
+                                <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..." />
 
-                                <h4 class="title">Mike Andrew<br />
+                                <h4 class="title">{{CommunicationService.username2 }}<br />
                                     <small>michael24</small>
                                 </h4>
                             </a>
@@ -23,7 +24,8 @@
                         </p>
                     </div>
                     <div class="btnEdit">
-                        <button class="btn btn-primary alinearbotoncard button"  (click)="IrEditarRuta()" type="submit">editar</button>
+                        <button class="btn btn-primary alinearbotoncard button" (click)="EditTour()"
+                            type="submit">editar</button>
                     </div>
 
                     <hr>
@@ -36,40 +38,45 @@
             </div>
 
             <div class="col-md-8">
-               <div class="card">
-                <div class="card-header">
-                    <h3 class="boxtitlecart">Reservas</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="boxtitlecart">Reservas</h3>
+                    </div>
+                    <div class="card-body">
+
+
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">NOMBRE</th>
+                                    <th scope="col">FECHA</th>
+                                    <th scope="col">ID_PRESTADOR</th>
+                                    <th scope="col">ID_TOMADOR</th>
+                                    <th scope="col">------</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let reserva of reservas">
+                                    <td>{{reserva.id}}</td>
+                                    <td>{{reserva.nombre}}</td>
+                                    <td>{{reserva.fechaReserva}}</td>
+                                    <td>{{reserva.prestador.username}}</td>
+                                    <td>{{reserva.tomador.username}}</td>
+                                    <td>
+                                        <button class="btn btn-danger">
+                                            Cancel</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+                    </div>
                 </div>
-                <div class="card-body">
-
-
-
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let user of users">
-                            <td>{{user.id}}</td>
-                            <td>{{user.username}}</td>
-                            <td>{{user.password}}</td>
-                            <td>
-                                <button class="btn btn-danger">cancelar</button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-
-
-
-                </div>
-               </div>
             </div>
         </div>
     </div>

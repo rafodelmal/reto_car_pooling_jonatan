@@ -1,9 +1,43 @@
+<!--
 <div class="main-content">
 
-          <ngui-map zoom="13" center="40.748817,-73.985428" style="margin-top:60px;height: 100%; width: 100%; position: absolute;top: 0px;
+          <ngui-map zoom="13" center="6.217,-75.567" style="margin-top:60px;height: 100%; width: 100%; position: absolute;top: 0px;
     left: 0px;
     background-color: rgb(229, 227, 223);">
-              <marker [position]="[40.748817,-73.985428]"></marker>
+              <marker [position]="[6.217,-75.567]"></marker>
           </ngui-map>
+
+</div>
+
+
+
+
+-->
+
+<div class="container">
+
+   
+  
+
+
+
+
+
+        <div class="main-content">
+
+            <ngui-map zoom="13" [latitude]="latitude" [longitude]="longitude" style="margin-top:60px;height: 100%; width: 100%; position: absolute;top: 0px;
+  left: 0px;
+  background-color: rgb(229, 227, 223);">
+                <marker [latitude]="latitude" [longitude]="longitude"></marker>
+                <marker [position]="[6.217,-75.567]"></marker>
+            </ngui-map>
+
+        </div>
+
+
+
+
+
+
 
 </div>

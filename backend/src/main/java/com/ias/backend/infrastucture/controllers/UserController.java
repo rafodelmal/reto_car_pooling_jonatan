@@ -33,11 +33,47 @@ public class UserController {
     }
 
 
+
+
+/*
+
+
     @GetMapping
     @RequestMapping("/login")
     public ResponseEntity<User> getUserByUsernameAndPasword(String username,String password) {
         
         return new ResponseEntity<User>(userRepository.findByUsernameAndPassword(username,password), HttpStatus.ACCEPTED);
+
+*/
+    @GetMapping
+    @RequestMapping("/login")
+    public ResponseEntity<User> getUserByUsernameAndPaswordAndRol(String username,String password,String rol) {
+        
+        return new ResponseEntity<User>(userRepository.findByUsernameAndPasswordAndRol(username,password,rol), HttpStatus.ACCEPTED);
     }
+
+  
+    /*
+    
+    
+    @GetMapping
+    @RequestMapping("/readr")
+    public ResponseEntity<Iterable<User>>getUserByPhone(String phone){
+
+        return new ResponseEntity<Iterable<User>>(userRepository.findByPhone(phone), HttpStatus.ACCEPTED);
+    }
+
+    */
+
+    @GetMapping
+    @RequestMapping("/readr")
+    public ResponseEntity<Iterable<User>>getUserByPhone(String phone){
+
+        return new ResponseEntity<Iterable<User>>(userRepository.findByPhone(phone), HttpStatus.ACCEPTED);
+    }
+
+
+
+
 }
 

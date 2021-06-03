@@ -10,11 +10,13 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: '/user', title: 'User',  icon: 'pe-7s-car', class: '' },
     { path: '/carpool', title: 'carPool',  icon:'pe-7s-user', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'pe-7s-science', class: '' },
     { path: '/maps', title: 'Maps',  icon:'pe-7s-map-marker', class: '' },
     { path: '/notifications', title: 'Notificaciones',  icon:'pe-7s-bell', class: '' },
     { path: '/upgrade', title: 'Upgrade to PRO',  icon:'pe-7s-rocket', class: 'active-pro' },
     { path: '/calculadora', title: 'calculadora',  icon:'pe-7s-bell', class: '' },
+
+   
+
     
 ];
  
@@ -26,6 +28,7 @@ export class SidebarComponent implements OnInit {
   menuItems: any[];
  
   constructor() { }
+
  
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -34,7 +37,8 @@ export class SidebarComponent implements OnInit {
       if ($(window).width() > 991) {
           return false;
       }
-      return true;
+      window.location.reload();
+      ;
   };
 }
  

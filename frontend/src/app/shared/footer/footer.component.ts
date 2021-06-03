@@ -9,4 +9,14 @@ declare var $:any;
 
 export class FooterComponent{
     test : Date = new Date();
+
+
+    goUp(){
+        window.scroll();
+    
+      }
+
+
 }
+
+

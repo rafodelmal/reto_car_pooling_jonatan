@@ -1,11 +1,14 @@
 <body>
     
-    <form action="" method="post" class="form-register">
+    <form action="" method="POST" class="form-register">
         <h2 class="form-titulo">CREA UNA CUENTA</h2>
         <h3 class="form-h3"> + <i class="pe-7s-car"></i></h3>
         <div class="contenedor-inputs">
             <input type="text" name="username" placeholder="Username" [(ngModel)]="username" class="form-control"  />
-            <input type="password" name="password" placeholder="Password" [(ngModel)]="password" />
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="password " class="form-control"/>
+            <input type="text" name="phone" placeholder="Phone" [(ngModel)]="phone " class="form-control"/>
+            <input type="text" name="placa" placeholder="Placa" [(ngModel)]="placa " class="form-control"/>
+
             <input type="submit" name="createCarpool" value="CreateCarpool" (click)="createCarpool()" />
             <p class="form-link">Ya tienes una cuenta?<a href="#">Ingresa aquí</a></p>
         </div>

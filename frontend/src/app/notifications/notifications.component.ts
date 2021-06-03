@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarpoolService } from 'app/shared/services/carpool.service';
 
 declare var $:any;
 
@@ -9,10 +10,15 @@ declare var $:any;
 })
 export class NotificationsComponent implements OnInit {
 
-  constructor() { }
+  title = 'geolocation';
+  public latitude;
+  public longitude;
 
-  ngOnInit() {
-  }
+  constructor(public service:CarpoolService) { }
+
+  ngOnInit(){
+    this.getLocation()
+    }
   showNotification(from, align){
       const type = ['','info','success','warning','danger'];
 
@@ -29,4 +35,11 @@ export class NotificationsComponent implements OnInit {
           }
       });
   }
+
+  getLocation() {
+    this.service.getPosition().then(pos => {
+        this.latitude = pos.lat;
+        this.longitude = pos.lng;
+    });
+}
 }

@@ -4,15 +4,28 @@
     <form class="box">
       <h1>Carpool <i class="pe-7s-car"></i></h1>
       <h5>Login</h5> 
-      <input type="text" name="username" placeholder="Username" [(ngModel)]="username" class="form-control"  />
-      <input type="password" name="password" placeholder="Password" [(ngModel)]="password" />
-      <input type="submit" name="loginCarpool" value="LoginCarpool" (click)="checkLoginCarpool()" />
-      <input type="submit" name="loginUser" value="LoginUser" (click)="checkLoginUser()" />
+      <input type="text" name="username" placeholder="Username" [(ngModel)]="username" class="form-control"  required="true" (input)="cambioTexto($event.target.value)"/>
+      <input type="password" name="password" placeholder="Password" [(ngModel)]="password" required="true"/>
+      <label for="" style="color: rgba(0, 255, 255, 0.904);">Select how you want to login ↓</label>
+<div class="selectbox">
+      <select class="form-control select" name="rol" id="rol" [(ngModel)]="rol" required="true">
+        <option value="0">Carpool</option>
+       <option value="1">User</option>
+    </select>
+</div>
+
+      <input type="submit" name="checkLogin" value="Login" (click)="checkLogin()" />
       <div>
-        <button class="btn" (click)="IrRegUsuario()"> Registrar usuario </button>
-        <br />
-        <br />
-        <button class="btn" (click)="IrRegCarpool()"> Registrar carpool </button>
+
+        <div class="boxRegUser">
+          <button class="btn" [(ngModel)]="rol" (click)="IrRegUsuario()"> Register user </button>
+          <br />
+        </div>
+        
+        <div  class="boxRegCarpool">
+          <button class="btn" (click)="IrRegCarpool()"> Register carpool </button>
+          <br />
+        </div>
       </div>
     </form>
   </body>

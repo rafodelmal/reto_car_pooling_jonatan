@@ -1,16 +1,22 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <form class="box" action="index.html" method="post">
-                <h1>¿ A donde te gustaria ir ?</h1>
-                <h3><i class="pe-7s-car"></i></h3>
-                <input type="text" name="" placeholder="Direccion" />
-                <input type="submit" name="" value="Buscar" />
+            <form class="box">
+
+    
+
+                        <h1>¿ A donde te gustaria ir ?</h1>
+                        <h3><i class="pe-7s-car"></i></h3>
+                        <input type="text" class="form-control" name="filterUser" placeholder="Direccion" [(ngModel)]="filterUser" />
+
+                
+                
+
             </form>
         </div>
         <div class="row">
             <div class="card1">
-                <div class="col-sm-4" *ngFor="let user of users">
+                <div class="col-sm-4" *ngFor="let user of users | filter:filterUser">
                     <div class="card card-user">
                         <div class="image">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRScNQSlONGTQ-N__-gXgCeTsRofCkJaZz5ag&usqp=CAU"
@@ -26,7 +32,7 @@
                                     </h4>
                                 </a>
                             </div>
-                            <p class="description text-center"> {{user.username}}
+                            <p class="description text-center"> {{user.phone}}
                             </p>
                         </div>
                         <hr>

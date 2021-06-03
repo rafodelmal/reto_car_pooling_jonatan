@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'app/shared/services/user.service';
 
 @Component({
   selector: 'app-maps',
@@ -8,8 +9,21 @@ import { Component, OnInit } from '@angular/core';
 
 export class MapsComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() { }
+  title = 'geolocation';
+  public latitude;
+  public longitude;
 
+  constructor(public service:UserService) { }
+
+  ngOnInit(){
+    this.getLocation()
+    }
+
+  getLocation() {
+    this.service.getPosition().then(pos => {
+        this.latitude = pos.lat;
+        this.longitude = pos.lng;
+    });
+}
 }
